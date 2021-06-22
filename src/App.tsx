@@ -12,7 +12,6 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/rooms/new" component={NewRoom}/>
       </AuthContextProvider>
-      
     </ BrowserRouter>
   );
 }
