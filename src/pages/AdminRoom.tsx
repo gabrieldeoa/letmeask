@@ -2,9 +2,8 @@ import { useHistory, useParams } from "react-router-dom";
 
 import { Button } from "../components/Button";
 import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
+import { RoomCode } from "../components/RoomCode/";
 import { useRoom } from "../hooks/useRoom";
-// import { useAuth } from "../hooks/useAuth";
 
 import { database } from "../services/firebase";
 
@@ -25,7 +24,6 @@ export function AdminRoom() {
   const roomId = params.id;
   
   const { questions, title } = useRoom(roomId);
-  // const { user } = useAuth();
 
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({
